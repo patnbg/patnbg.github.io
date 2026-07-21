@@ -1,323 +1,204 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; media-src 'none'; worker-src 'none'">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Department of Personal Affairs case file 001: an investigation into one drawer of obsolete and possibly useful cables.">
-  <title>Case 001: Cable Drawer Inquiry | Department of Personal Affairs</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#case-001">Skip to case file</a>
-  <div class="site-shell">
-    <header class="site-header">
-      <div>
-        <p class="department-name">Department of Personal Affairs</p>
-        <p class="department-motto">Serving one constituent since 2026.</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"
+    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07122e">
+    <meta
+      name="description"
+      content="NULL//STAR is an interactive deep-space signal scanner broadcasting from nowhere in particular."
+    >
+    <title>NULL//STAR — Deep Space Signal Scanner</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/script.js"></script>
+  </head>
+  <body data-signal="blue-hour">
+    <script src="/boot.js"></script>
+
+    <section class="boot-screen" aria-label="Terminal startup">
+      <div class="boot-screen__noise" aria-hidden="true"></div>
+      <div class="boot-screen__content">
+        <p class="boot-screen__mark">N//S</p>
+        <div class="boot-screen__copy" aria-live="polite">
+          <p>NULL STAR REMOTE SENSING UNIT</p>
+          <p>CALIBRATING IMPOSSIBLE DISTANCES...</p>
+          <p class="boot-screen__success">CARRIER DETECTED</p>
+        </div>
+        <div class="boot-screen__meter" aria-hidden="true"><span></span></div>
+        <button class="boot-screen__skip" type="button">Skip boot [Esc]</button>
       </div>
-      <nav class="site-nav" aria-label="Department records">
-        <ul>
-          <li><a href="#case-001" aria-current="page">Current case</a></li>
-          <li><a href="records.html">Records</a></li>
-          <li><a href="unfiled.html">Unfiled</a></li>
-        </ul>
-      </nav>
-    </header>
+    </section>
 
-    <main id="case-001">
-      <div class="routing-strip" role="group" aria-label="Case routing information">
-        <div class="route-field">Destination <strong>General records</strong></div>
-        <div class="route-field route-field--marked">Priority <strong>Drawer-level</strong></div>
-        <div class="route-field">Case status <strong>Resolved</strong></div>
-      </div>
+    <div class="world" aria-hidden="true">
+      <span class="world__orb world__orb--one"></span>
+      <span class="world__orb world__orb--two"></span>
+      <span class="world__star-field"></span>
+    </div>
 
-      <article class="case-grid" aria-labelledby="case-title">
-        <aside class="meta-rail" aria-label="Case metadata">
-          <p class="eyebrow">Case record</p>
-          <dl class="meta-list">
-            <div>
-              <dt>Case</dt>
-              <dd>DPA-001</dd>
-            </div>
-            <div>
-              <dt>Status</dt>
-              <dd><span class="status status--closed">Resolved</span></dd>
-            </div>
-            <div>
-              <dt>Opened</dt>
-              <dd><time datetime="2026-06-30">30 JUN 2026</time></dd>
-            </div>
-            <div>
-              <dt>Last activity</dt>
-              <dd><time datetime="2026-07-19">19 JUL 2026</time></dd>
-            </div>
-            <div>
-              <dt>Officer</dt>
-              <dd>Sole Clerk</dd>
-            </div>
-            <div>
-              <dt>Risk</dt>
-              <dd>Moderate clutter</dd>
-            </div>
-            <div>
-              <dt>Location</dt>
-              <dd>Drawer 3</dd>
-            </div>
-            <div>
-              <dt>Accession</dt>
-              <dd>2026-CBL-01</dd>
-            </div>
-          </dl>
-        </aside>
+    <div class="terminal-shell">
+      <a class="skip-link" href="#main-content">Skip the transmission shell</a>
+      <header class="system-bar">
+        <a class="wordmark" href="#main-content" aria-label="NULL STAR home">
+          <span class="wordmark__glyph" aria-hidden="true">N//S</span>
+          <span>NULL STAR</span>
+        </a>
+        <dl class="system-status" aria-label="Receiver status">
+          <div>
+            <dt>Link</dt>
+            <dd><span class="status-light" aria-hidden="true"></span>Ghostband</dd>
+          </div>
+          <div>
+            <dt>UTC time</dt>
+            <dd id="local-time">00:00:00</dd>
+          </div>
+          <div>
+            <dt>Noise</dt>
+            <dd>−81.4 dB</dd>
+          </div>
+        </dl>
+        <p class="system-id">RX-09 / SECTOR ∅</p>
+      </header>
 
-        <div class="case-content">
-          <header class="case-cover">
-            <p class="eyebrow">Investigation 001 / Infrastructure</p>
-            <h1 class="case-title" id="case-title">Cable Drawer Inquiry</h1>
-            <p class="executive-finding">Drawer 3 contains enough cable to connect several eras of personal computing, but not always to one another.</p>
+      <main id="main-content" tabindex="-1">
+        <section class="hero" aria-labelledby="page-title">
+          <header class="hero__intro">
+            <p class="kicker"><span>Unlicensed transmission</span> / cycle 2099</p>
+            <h1 id="page-title">
+              <span class="title-null">NULL</span>
+              <span class="title-slash" aria-hidden="true">//</span>
+              <span class="title-star">STAR</span>
+            </h1>
+            <p class="hero__lede">
+              Point the receiver at the softest part of the void. Something out there has been
+              rehearsing your name.
+            </p>
+            <p class="hero__instruction">
+              <span aria-hidden="true">↳</span> Move across the scanner. Press to acquire.
+            </p>
           </header>
 
-          <div class="status-stamp" role="status" aria-label="Status: resolved, retention authorized">Resolved<br>retention authorized</div>
+          <div class="receiver">
+            <div class="receiver__chrome" aria-hidden="true"></div>
+            <button
+              class="scanner"
+              type="button"
+              aria-label="Signal scanner. Move the pointer or use arrow keys to tune. Press to acquire the next signal."
+            >
+              <span class="scanner__glass" aria-hidden="true">
+                <span class="scanner__grid"></span>
+                <span class="scanner__orbit scanner__orbit--outer"></span>
+                <span class="scanner__orbit scanner__orbit--inner"></span>
+                <span class="scanner__sweep"></span>
+                <span class="scanner__target">
+                  <i></i><i></i><i></i>
+                </span>
+                <span class="scanner__moon"></span>
+                <span class="scanner__label scanner__label--top">AZ 093.1</span>
+                <span class="scanner__label scanner__label--bottom">EL −17.4</span>
+              </span>
+            </button>
+            <div class="receiver__ticks" aria-hidden="true">
+              <span>0</span><span>45</span><span>90</span><span>135</span><span>180</span>
+            </div>
+            <div class="receiver__caption">
+              <span>Parallax receiver</span>
+              <span>Drag field / Enter to lock</span>
+            </div>
+          </div>
 
-          <section class="report-section" aria-labelledby="summary-heading">
-            <p class="section-label">Executive summary</p>
-            <h2 id="summary-heading">A small drawer with an unusually long memory</h2>
-            <p class="lead">Drawer 3 was opened after a USB-C cable could not be found despite a reasonable belief that at least four were present. The review documented 40 cable specimens, three adapters, and one unidentified power supply. One of the four USB-C cables was eventually found in service elsewhere.</p>
-            <p>The collection is not random. It is a compressed history of machines once owned, borrowed, repaired, or prepared for. Every connector marks a period when a certain port seemed permanent. VGA belonged to monitors that could be made to work by tightening two little screws. Mini-USB belonged to a camera whose battery door no longer closes. The printer cable remains attached, in memory if not in fact, to the sound of an inkjet cleaning its heads at the worst possible moment.</p>
-            <p>The practical question was which cables still deserved space. The less practical question, introduced almost immediately, was whether disposal might leave the Department unprepared for a future in which somebody urgently needs to connect a 2007 scanner.</p>
-          </section>
-
-          <aside class="commissioner-note" aria-label="Acting Commissioner memo">
-            <p><strong>Cable Forward 2026</strong> has converted a drawer problem into an infrastructure opportunity. All future references to “sorting things out” should use the approved term <em>portfolio rationalization</em>.</p>
+          <aside class="transmission" aria-labelledby="transmission-title">
+            <div class="transmission__head">
+              <p>Acquired object</p>
+              <span id="signal-lock">Lock 94%</span>
+            </div>
+            <div class="transmission__wave" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="transmission__code" id="signal-code">VX–09 / BLUE HOUR</p>
+            <h2 id="transmission-title">A familiar future is calling collect.</h2>
+            <blockquote id="signal-message">
+              “You were never late. The signal simply left too early.”
+            </blockquote>
+            <dl class="signal-data">
+              <div><dt>Origin</dt><dd id="signal-origin">Vega afterimage</dd></div>
+              <div><dt>Age</dt><dd id="signal-age">31 light years</dd></div>
+              <div><dt>Mood</dt><dd id="signal-mood">Electric blue</dd></div>
+            </dl>
+            <button class="acquire-button" type="button">
+              <span>Acquire next ghost</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p class="sr-only" id="signal-announcement" aria-live="polite"></p>
           </aside>
-
-          <section class="report-section" aria-labelledby="inventory-heading">
-            <p class="section-label">Finding A / Inventory</p>
-            <h2 id="inventory-heading">The collection is diverse, duplicated, and mostly explicable</h2>
-            <p>Specimens were grouped by the job they once performed rather than by the device they happened to accompany. This prevents the usual category of “cable for something” from becoming a permanent classification.</p>
-
-            <figure class="evidence-plate">
-              <div class="plate-label"><span>Plate A / Display</span><span>ACC. 001-A</span></div>
-              <svg class="lot-diagram" viewBox="0 0 360 260" role="img" aria-labelledby="plate-a-title plate-a-desc">
-                <title id="plate-a-title">Display connector evidence</title>
-                <desc id="plate-a-desc">Simplified VGA, DVI, HDMI, and DisplayPort connectors. The lot contains one VGA, one DVI, two HDMI, and one DisplayPort cable.</desc>
-                <text class="diagram-text" x="23" y="25">VGA / 1</text>
-                <path class="diagram-heavy" d="M28 46h116l12 15v45l-12 15H28L16 106V61z M39 64h94v38H39z M50 75h7m15 0h7m15 0h7m15 0h7M58 91h7m15 0h7m15 0h7"/>
-                <text class="diagram-text" x="213" y="25">DVI / 1</text>
-                <path class="diagram-heavy" d="M207 46h121l10 12v54l-10 12H207l-10-12V58z M215 62h84v45h-84z M309 66h14v37h-14z"/>
-                <path class="diagram-light" d="M225 72h6m11 0h6m11 0h6m11 0h6M225 86h6m11 0h6m11 0h6m11 0h6M225 100h6m11 0h6m11 0h6m11 0h6"/>
-                <text class="diagram-text" x="24" y="159">HDMI / 2</text>
-                <path class="diagram-heavy" d="M25 179h126l10 13-10 43H25l-10-43z M37 194h102l-5 24H42z"/>
-                <text class="diagram-text" x="202" y="159">DISPLAYPORT / 1</text>
-                <path class="diagram-heavy" d="M205 177h125l12 13v45H205z M219 192h106v28H219z"/>
-              </svg>
-              <figcaption>Five display cables across four standards. Scale and dimensions are unverified.</figcaption>
-            </figure>
-
-            <figure class="evidence-plate">
-              <div class="plate-label"><span>Plate B / Peripherals</span><span>ACC. 001-B</span></div>
-              <svg class="lot-diagram" viewBox="0 0 360 345" role="img" aria-labelledby="plate-b-title plate-b-desc">
-                <title id="plate-b-title">Peripheral connector evidence</title>
-                <desc id="plate-b-desc">Simplified PS/2 and USB connector types. The lot contains one PS/2 extension, two USB-A extensions, one USB-B printer cable, one Mini-USB, three Micro-USB, and four USB-C cables.</desc>
-                <text class="diagram-text" x="22" y="25">PS/2 / 1</text><circle class="diagram-heavy" cx="85" cy="76" r="39"/><path class="diagram-light" d="M64 65h7m14-12v7m14 5h7M73 82h7m18 0h7M85 91v12"/>
-                <text class="diagram-text" x="205" y="25">USB-A EXT / 2</text><path class="diagram-heavy" d="M205 48h125v66H205z M220 63h95v36h-95z M232 69v24m71-24v24"/>
-                <text class="diagram-text" x="22" y="151">USB-B / 1</text><path class="diagram-heavy" d="M26 170h116l16 17v66H10v-66z M40 189h88v45H40z"/>
-                <text class="diagram-text" x="200" y="151">MINI / 1</text><path class="diagram-heavy" d="M203 183h128l9 23-9 23H203l-9-23z M216 195h102v22H216z"/>
-                <text class="diagram-text" x="20" y="283">MICRO / 3</text><path class="diagram-heavy" d="M22 302h130l7 16-7 16H22l-7-16z M34 310h106v16H34z"/>
-                <text class="diagram-text" x="207" y="283">USB-C / 4*</text><rect class="diagram-heavy" x="205" y="299" width="132" height="39" rx="19"/><rect class="diagram-light" x="226" y="309" width="90" height="19" rx="9"/>
-                <path class="diagram-red" d="M207 273c34-12 73-12 126 0"/><text class="diagram-text-red" x="205" y="256">*ONE IN SERVICE</text>
-              </svg>
-              <figcaption>Twelve peripheral cables. USB quantities are cables classified by their less common end, avoiding double-counting USB-A connectors.</figcaption>
-            </figure>
-
-            <figure class="evidence-plate">
-              <div class="plate-label"><span>Plate C / Network &amp; telecom</span><span>ACC. 001-C</span></div>
-              <svg class="lot-diagram" viewBox="0 0 360 170" role="img" aria-labelledby="plate-c-title plate-c-desc">
-                <title id="plate-c-title">Network and telephone evidence</title>
-                <desc id="plate-c-desc">Simplified RJ45 and RJ11 connectors. The lot contains three Ethernet cables and one telephone cable.</desc>
-                <text class="diagram-text" x="24" y="25">RJ45 / 3</text><path class="diagram-heavy" d="M28 49h123l13 15v75H15V64z M47 71v48m15-48v48m15-48v48m15-48v48m15-48v48m15-48v48m15-48v48"/>
-                <text class="diagram-text" x="210" y="25">RJ11 / 1</text><path class="diagram-heavy" d="M210 57h112l12 14v68H198V71z M224 78v42m20-42v42m20-42v42m20-42v42"/>
-              </svg>
-              <figcaption>Four network and telecom cables. The RJ11 lead has no current assignment.</figcaption>
-            </figure>
-
-            <table class="evidence-table">
-              <thead>
-                <tr><th>Evidence lot</th><th>Qty.</th><th>Contents</th><th>Finding</th></tr>
-              </thead>
-              <tbody>
-                <tr><td data-label="Evidence lot">Display</td><td data-label="Quantity">5</td><td data-label="Contents">VGA, DVI, HDMI, DisplayPort</td><td data-label="Finding">Four incompatible assurances that the next monitor would be easy.</td></tr>
-                <tr><td data-label="Evidence lot">Peripherals</td><td data-label="Quantity">12</td><td data-label="Contents">PS/2, USB-A, USB-B, Mini-USB, Micro-USB, USB-C</td><td data-label="Finding">USB did simplify matters, but only after creating a small museum of itself.</td></tr>
-                <tr><td data-label="Evidence lot">Network &amp; telecom</td><td data-label="Quantity">4</td><td data-label="Contents">Ethernet / RJ45, telephone / RJ11</td><td data-label="Finding">Ethernet remains useful. The telephone lead retains no current assignment.</td></tr>
-                <tr><td data-label="Evidence lot">Audio &amp; video</td><td data-label="Quantity">6</td><td data-label="Contents">SCART, 3.5 mm, stereo RCA, composite RCA A/V, coaxial</td><td data-label="Finding">Old standards remain live where old devices remain live.</td></tr>
-                <tr><td data-label="Evidence lot">Internal storage</td><td data-label="Quantity">4</td><td data-label="Contents">SATA, IDE ribbon</td><td data-label="Finding">One duplicate ribbon exceeds the demonstrated requirement.</td></tr>
-                <tr><td data-label="Evidence lot">Power</td><td data-label="Quantity">9</td><td data-label="Contents">Mains leads, IEC C13, IEC C7, barrel charger</td><td data-label="Finding">Useful when labelled; suspicious when anonymous.</td></tr>
-              </tbody>
-            </table>
-            <p>USB and Ethernet appear in multiples because they are still routinely lent, misplaced, routed badly, or found to be the wrong length. Duplicates here represent actual resilience. The two HDMI leads also survive scrutiny. By contrast, the single PS/2 extension preserves access to no keyboard currently owned and extends it farther away from no computer currently owned.</p>
-          </section>
-
-          <aside class="commissioner-note" aria-label="Acting Commissioner annotation">
-            <p>A collection with VGA <em>and</em> DisplayPort demonstrates end-to-end capability. It is like owning both a canoe and a space programme: the Department can meet stakeholders wherever they are.</p>
-          </aside>
-
-          <section class="report-section" aria-labelledby="legacy-heading">
-            <p class="section-label">Finding B / Legacy systems</p>
-            <h2 id="legacy-heading">Obsolescence is uneven because memory is not a retention policy</h2>
-            <p>The audio and video lot produced the strongest case for selective release. SCART is magnificent in the way a connector can be magnificent: enormous, directional only after close inspection, and capable of loosening under its own confidence. It recalls the television behind which it was once installed, where every adjustment required moving a cabinet and making peace with dust.</p>
-
-            <figure class="evidence-plate">
-              <div class="plate-label"><span>Plate D / Audio &amp; video</span><span>ACC. 001-D</span></div>
-              <svg class="lot-diagram" viewBox="0 0 360 390" role="img" aria-labelledby="plate-d-title plate-d-desc">
-                <title id="plate-d-title">Audio and video connector evidence</title>
-                <desc id="plate-d-desc">Simplified SCART, composite RCA, stereo RCA, 3.5 millimetre audio, and coaxial connectors. The lot contains six cables.</desc>
-                <text class="diagram-text" x="19" y="25">SCART / 1 / 21 PINS</text><path class="diagram-heavy" d="M22 46h316l13 26-13 76H22L9 72z M38 66h284v61H38z"/><path class="diagram-light" d="M54 82h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9M63 106h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9m18 0h9"/>
-                <text class="diagram-text" x="17" y="187">COMPOSITE A/V / 1</text>
-                <path class="diagram-heavy" d="M27 205h58v28H27z M39 233v55m34-55v55 M29 288h54"/><circle class="diagram-fill" cx="56" cy="214" r="8"/>
-                <path class="diagram-heavy" d="M109 205h58v28h-58z M121 233v55m34-55v55 M111 288h54"/><circle class="diagram-red-fill" cx="138" cy="214" r="8"/>
-                <path class="diagram-heavy" d="M191 205h58v28h-58z M203 233v55m34-55v55 M193 288h54"/><circle class="diagram-sheet-fill" cx="220" cy="214" r="8"/>
-                <path class="diagram-red" d="M271 206c28 7 49 25 62 52"/><text class="diagram-text-red" x="262" y="187">Y / R / W</text>
-                <text class="diagram-text" x="18" y="325">STEREO RCA / 1</text><text class="diagram-text" x="155" y="325">3.5 MM / 2</text><text class="diagram-text" x="274" y="325">COAX / 1</text>
-                <path class="diagram-heavy" d="M18 341h83v20H18z M101 345h36v12h-36 M154 341h64v20h-64z M218 345h34v12h-34 M271 340h52v23h-52z M323 346h27v11h-27"/>
-              </svg>
-              <figcaption>Six legacy signal cables. Composite RCA correctly carries yellow video and red/white stereo audio; a separate red/white cable serves audio-only equipment.</figcaption>
-            </figure>
-
-            <p>Yet the composite RCA set has earned its place twice in recent years: once for a borrowed game console and once for diagnosing an old video deck. The 3.5 mm leads are still ordinary tools. Coaxial remains attached to a plausible household use. The SCART lead survives for a different reason. It belongs with one particular old console, and separating them would convert a working object into two incomplete objects stored in different places.</p>
-            <p>This is where a purely numerical policy fails. Some old standards remain live because the old device remains live. Others are only souvenirs disguised as contingencies. The distinction is not age; it is whether the cable completes something real.</p>
-          </section>
-
-          <aside class="commissioner-note" aria-label="Acting Commissioner strategic note">
-            <p>Leadership rejects the term “obsolete.” Approved doctrine is <strong>strategic optionality</strong>: every cable is awaiting a future compatibility event. Disposal reduces readiness by one cable per cable.</p>
-          </aside>
-
-          <section class="report-section" aria-labelledby="policy-heading">
-            <p class="section-label">Finding C / Retention</p>
-            <h2 id="policy-heading">A cable should either work now, complete a kept device, or leave</h2>
-            <p>The internal storage and power lots were tested against a simple rule. SATA remains current enough to keep. One IDE ribbon cable remains with the last compatible drive until its contents are reviewed; the duplicate does not acquire additional historical importance by being equally flat.</p>
-
-            <figure class="evidence-plate">
-              <div class="plate-label"><span>Plate E / Internal storage</span><span>ACC. 001-E</span></div>
-              <svg class="lot-diagram" viewBox="0 0 360 190" role="img" aria-labelledby="plate-e-title plate-e-desc">
-                <title id="plate-e-title">Internal storage cable evidence</title>
-                <desc id="plate-e-desc">Simplified SATA and IDE ribbon connectors. The lot contains two of each cable.</desc>
-                <text class="diagram-text" x="22" y="25">SATA / 2</text><path class="diagram-heavy" d="M24 48h132v57H24z M39 63h102v27H39z M57 63v27"/>
-                <text class="diagram-text" x="199" y="25">IDE RIBBON / 2</text><path class="diagram-heavy" d="M196 47h146v61H196z M209 60h120v35H209z"/><path class="diagram-light" d="M219 64v27m12-27v27m12-27v27m12-27v27m12-27v27m12-27v27m12-27v27m12-27v27m12-27v27"/>
-                <path class="diagram-red" d="M211 139c32 16 72 16 111 0"/><text class="diagram-text-red" x="199" y="165">DUPLICATE ≠ BACKUP</text>
-              </svg>
-              <figcaption>Four internal-storage cables. One IDE ribbon is retained with the last compatible drive; its duplicate was selected for release.</figcaption>
-            </figure>
-
-            <figure class="evidence-plate">
-              <div class="plate-label"><span>Plate F / Power</span><span>ACC. 001-F</span></div>
-              <svg class="lot-diagram" viewBox="0 0 360 310" role="img" aria-labelledby="plate-f-title plate-f-desc">
-                <title id="plate-f-title">Power cable evidence</title>
-                <desc id="plate-f-desc">Simplified mains, IEC C13, IEC C7, and laptop barrel power connectors. The lot contains nine cables.</desc>
-                <text class="diagram-text" x="21" y="25">MAINS LEADS / 3</text><path class="diagram-heavy" d="M24 48h127v64H24z M45 67h18v25H45z M86 67h18v25H86z M127 67h18v25h-18"/>
-                <text class="diagram-text" x="204" y="25">IEC C13 / 3</text><path class="diagram-heavy" d="M211 48h112l14 19-14 48H211l-14-48z M228 66h17v25h-17z M290 66h17v25h-17z M259 80h17v24h-17z"/>
-                <text class="diagram-text" x="20" y="163">IEC C7 / 2</text><path class="diagram-heavy" d="M30 185c18-14 39-14 57 0l21 25-21 32c-18 14-39 14-57 0L9 210z M41 198h35v23H41z"/>
-                <text class="diagram-text" x="178" y="163">LAPTOP BARREL / 1</text><path class="diagram-heavy" d="M180 188h72v35h-72z M252 195h49v21h-49 M301 199h40v13h-40 M341 201h13v9h-13"/>
-                <path class="diagram-red" d="M177 256c41 15 89 15 145 0"/><text class="diagram-text-red" x="179" y="282">LABEL DEVICE FAMILY</text>
-              </svg>
-              <figcaption>Nine power cables. The barrel charger is retained with a device label; anonymous adapters receive no such presumption.</figcaption>
-            </figure>
-
-            <ol class="policy-list">
-              <li><strong>Retain active standards</strong> in quantities supported by actual simultaneous use.</li>
-              <li><strong>Retain complete sets</strong> when a cable is necessary to operate a specific device that is itself being kept.</li>
-              <li><strong>Label proprietary power supplies</strong> with the device family before institutional memory fails.</li>
-              <li><strong>Release duplicates and unsupported standards</strong> unless a named, testable use exists.</li>
-            </ol>
-            <p>Under that rule, four specimens were selected for disposal: one IDE ribbon, the PS/2 extension, an excess Micro-USB lead, and the telephone cable. Two unidentifiable adapters were separated for electronic recycling. General mains leads, IEC C13 and C7 figure-eight cords, the labelled laptop barrel charger, SATA, and the remaining data cables were returned in loose coils, which the Clerk recognizes as an incomplete operational improvement.</p>
-            <p class="clerk-correction"><strong>Clerk’s correction:</strong> Before collection, the telephone lead was recovered on the basis that a future modem might require it. The IDE ribbon was also recovered, although no future drive was named. Net reduction: two cables and two adapters, not four cables as stated in the closing briefing.</p>
-          </section>
-
-          <aside class="commissioner-note" aria-label="Acting Commissioner performance note">
-            <p>Drawer capacity liberated: <strong>17%</strong>.</p>
-            <p>Method: visual estimate made while the drawer was open. Seventeen percent is almost a fifth, which is basically a quarter in momentum terms.</p>
-          </aside>
-
-          <section class="ruling" aria-labelledby="ruling-heading">
-            <p class="section-label">Final ruling / DPA-001</p>
-            <h2 id="ruling-heading">Selective retention authorized</h2>
-            <p>Drawer 3 may continue as a working cable archive, subject to three conditions: every retained cable must have a named use; device-specific cables must be stored with or labelled for that device; and speculative future compatibility alone does not constitute a use.</p>
-            <p>The Department finds that careful disposal can preserve memory better than indiscriminate keeping. A smaller collection makes each surviving connection easier to see.</p>
-          </section>
-
-          <aside class="commissioner-note" aria-label="Acting Commissioner approval">
-            <p><strong>Approved with amendments.</strong> Strategic optionality remains official policy until the next drawer review, currently outside staffing capacity.</p>
-          </aside>
-
-          <footer class="case-signature">
-            <strong>Sole Clerk, Assistant to the Acting Commissioner</strong>
-            Filed <time datetime="2026-07-19">19 JUL 2026</time> / Registry copy 1 of 1
-          </footer>
-        </div>
-      </article>
-
-      <div class="operations">
-        <section aria-labelledby="kpi-heading">
-          <p class="section-label">Departmental register</p>
-          <h2 id="kpi-heading">Performance indicators</h2>
-          <dl class="kpi-register">
-            <div><dt>Cases opened</dt><dd>2</dd></div>
-            <div><dt>Cases resolved</dt><dd>1</dd></div>
-            <div><dt>Cable specimens reviewed</dt><dd>40</dd></div>
-            <div><dt>Cables released</dt><dd>2</dd></div>
-            <div><dt>Standards represented</dt><dd>22</dd></div>
-            <div><dt>Drawer capacity liberated</dt><dd>17%</dd><dd class="kpi-footnote">Visual estimate; measurement protocol pending.</dd></div>
-            <div><dt>Stakeholder confidence</dt><dd>High</dd><dd class="kpi-footnote">Only stakeholder not consulted.</dd></div>
-          </dl>
         </section>
 
-        <section aria-labelledby="docket-heading">
-          <p class="section-label">Active queue</p>
-          <h2 id="docket-heading">Docket</h2>
-          <ol class="docket">
-            <li>
-              <div class="docket-head"><span>DPA-002</span><time datetime="2026-07-17">17 JUL 2026</time></div>
-              <h3>Unidentified Key Review</h3>
-              <span class="status status--open">Awaiting evidence</span>
-              <p>A security review of keys with no known lock, owner, purpose, or defensible retention policy.</p>
-            </li>
-          </ol>
-          <a class="more-link" href="records.html">View all records</a>
+        <section class="archive" aria-labelledby="archive-title">
+          <header class="archive__header">
+            <div>
+              <p class="kicker">Recovered fragments / 04</p>
+              <h2 id="archive-title">Signals nobody requested</h2>
+            </div>
+            <p>
+              Each fragment arrived complete, without context, and slightly warm to the touch.
+              Choose one to retune the receiver.
+            </p>
+          </header>
+
+          <div class="fragment-list" aria-label="Recovered signal fragments">
+            <button class="fragment is-active" type="button" data-fragment="blue-hour" aria-current="true">
+              <span class="fragment__index">α.01</span>
+              <span class="fragment__name">Blue hour</span>
+              <span class="fragment__frequency">88.09 MHz</span>
+              <span class="fragment__symbol" aria-hidden="true">◌</span>
+            </button>
+            <button class="fragment" type="button" data-fragment="local-ghost">
+              <span class="fragment__index">β.14</span>
+              <span class="fragment__name">Local ghost</span>
+              <span class="fragment__frequency">104.6 MHz</span>
+              <span class="fragment__symbol" aria-hidden="true">⌁</span>
+            </button>
+            <button class="fragment" type="button" data-fragment="soft-error">
+              <span class="fragment__index">γ.00</span>
+              <span class="fragment__name">Soft error</span>
+              <span class="fragment__frequency">0.00 MHz</span>
+              <span class="fragment__symbol" aria-hidden="true">◇</span>
+            </button>
+            <button class="fragment" type="button" data-fragment="last-light">
+              <span class="fragment__index">δ.77</span>
+              <span class="fragment__name">Last light</span>
+              <span class="fragment__frequency">177.7 MHz</span>
+              <span class="fragment__symbol" aria-hidden="true">✦</span>
+            </button>
+          </div>
         </section>
 
-        <section aria-labelledby="unfiled-heading">
-          <p class="section-label">Intake tray</p>
-          <h2 id="unfiled-heading">Unfiled materials</h2>
-          <ol class="unfiled-list">
-            <li>
-              <div class="material-head"><span>Observation</span><time datetime="2026-07-18">18 JUL 2026</time></div>
-              <p>The useful spare cable is the one stored nearest to the wrong cable.</p>
-            </li>
-            <li>
-              <div class="material-head"><span>Recommendation</span><time datetime="2026-07-12">12 JUL 2026</time></div>
-              <p>Label power adapters before forgetting what they power, not after.</p>
-            </li>
-            <li>
-              <div class="material-head"><span>Potential case</span><time datetime="2026-07-06">06 JUL 2026</time></div>
-              <p>The cupboard contains seven reusable bags and no accepted definition of “enough.”</p>
-            </li>
-          </ol>
-          <a class="more-link" href="unfiled.html">Open the intake tray</a>
+        <section class="sign-off" aria-labelledby="sign-off-title">
+          <p class="sign-off__orbit" aria-hidden="true">END OF RECEIVABLE UNIVERSE · END OF RECEIVABLE UNIVERSE ·</p>
+          <div>
+            <p class="kicker">Operator note / unsent</p>
+            <h2 id="sign-off-title">Stay strange.<br>Stay in range.</h2>
+          </div>
+          <p class="sign-off__copy">
+            The receiver will remain open until the stars finish buffering. No cookies. No
+            tracking. No sensible explanation.
+          </p>
         </section>
+      </main>
 
-        <section aria-labelledby="notice-heading">
-          <p class="section-label">Public notice</p>
-          <h2 id="notice-heading">Newly established</h2>
-          <p>The Department opened in 2026. The short record reflects its age, not a loss of files. Further investigations will appear when they have findings worth filing.</p>
-          <p>No publication schedule has been adopted. Leadership has described this as “responsive commissioning.”</p>
-        </section>
-      </div>
-    </main>
+      <footer class="site-footer">
+        <p>NULL//STAR RADIO SYSTEMS © 2099</p>
+        <p>Made for the beautiful nowhere</p>
+        <a href="#main-content">Return to scanner ↑</a>
+      </footer>
+    </div>
 
-    <footer class="site-footer">
-      <span>Department of Personal Affairs / Est. 2026</span>
-      <a class="case-zero-link" href="case-000.html">Authority: provisional</a>
-    </footer>
-  </div>
-</body>
+    <noscript>
+      <p class="no-script">JavaScript is offline. The stars remain visible, but untunable.</p>
+    </noscript>
+  </body>
 </html>
