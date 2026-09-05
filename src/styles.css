@@ -1,0 +1,538 @@
+@import "@fontsource-variable/azeret-mono/wght.css";
+@import "@fontsource-variable/bricolage-grotesque/wght.css";
+
+:root {
+  color: #171620;
+  background: #4655d8;
+  font-family: "Azeret Mono Variable", monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  color-scheme: light;
+  --ink: #171620;
+  --paper: #fff7d1;
+  --cobalt: #4655d8;
+  --coral: #ff674d;
+  --mint: #bcecc9;
+  --chalk: #f8f4ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--cobalt);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.scene {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(1.25rem, 4.5vw, 4rem);
+  background-color: var(--cobalt);
+  background-image:
+    linear-gradient(rgb(255 255 255 / 10%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 10%) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.scene::before,
+.scene::after {
+  position: absolute;
+  z-index: -2;
+  content: "";
+  border: 3px solid var(--ink);
+}
+
+.scene::before {
+  top: clamp(2rem, 7vw, 5.5rem);
+  left: clamp(-5rem, -3vw, -2rem);
+  width: clamp(8rem, 17vw, 15rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.scene::after {
+  right: clamp(-3rem, -1vw, -1rem);
+  bottom: clamp(2rem, 6vw, 5rem);
+  width: clamp(7rem, 13vw, 12rem);
+  height: clamp(2.5rem, 5vw, 4rem);
+  background: var(--chalk);
+  transform: rotate(-8deg);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.scene__sun {
+  position: absolute;
+  z-index: -1;
+  top: clamp(1rem, 5vw, 4rem);
+  right: clamp(1rem, 7vw, 7rem);
+  width: clamp(4.5rem, 8vw, 7rem);
+  aspect-ratio: 1;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.scene__scribble {
+  position: absolute;
+  z-index: -1;
+  color: var(--chalk);
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(1.25rem, 2.8vw, 2.7rem);
+  font-weight: 750;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.scene__scribble--left {
+  bottom: clamp(2rem, 7vw, 6rem);
+  left: clamp(1rem, 6vw, 6rem);
+  transform: rotate(-9deg);
+}
+
+.scene__scribble--right {
+  top: 38%;
+  right: clamp(0.75rem, 3vw, 3rem);
+  color: var(--ink);
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+  transform: rotate(8deg);
+}
+
+.calendar {
+  position: relative;
+  overflow-wrap: anywhere;
+  width: min(54rem, calc(100vw - clamp(2rem, 10vw, 8rem)));
+  animation: settle-page 620ms cubic-bezier(0.22, 0.8, 0.28, 1) both;
+  transform: rotate(-1.15deg);
+}
+
+.calendar__shadow {
+  position: absolute;
+  inset: 1rem -1rem -1rem 1rem;
+  z-index: -1;
+  background: var(--ink);
+}
+
+.calendar__body {
+  border: 3px solid var(--ink);
+  background: var(--paper);
+}
+
+.calendar__topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-height: 6.25rem;
+  padding: 1.1rem clamp(1.25rem, 3vw, 2.5rem) 1rem;
+  border-bottom: 3px solid var(--ink);
+  background: var(--coral);
+}
+
+.calendar__title {
+  display: flex;
+  gap: 0.25em;
+  margin: 0;
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(2.3rem, 6vw, 5rem);
+  font-weight: 780;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+}
+
+.calendar__title span:last-child {
+  color: var(--paper);
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+}
+
+.calendar__edition {
+  margin: 0 0 0.15rem;
+  font-size: clamp(0.62rem, 1.2vw, 0.8rem);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.calendar__binding {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 0;
+  justify-content: space-around;
+  padding: 0 clamp(1.4rem, 6vw, 5.5rem);
+}
+
+.calendar__binding span {
+  width: clamp(1.25rem, 2.4vw, 1.75rem);
+  aspect-ratio: 1;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--cobalt);
+  transform: translateY(-50%);
+  box-shadow: inset 3px 3px 0 rgb(23 22 32 / 25%);
+}
+
+.calendar__sheet {
+  position: relative;
+  display: grid;
+  min-height: min(66vh, 37rem);
+  grid-template-columns: minmax(7.5rem, 0.28fr) 1fr;
+  grid-template-rows: 1fr auto;
+  column-gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding: clamp(2.3rem, 5vw, 4.25rem) clamp(1.4rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 2.25rem);
+  background-color: var(--paper);
+  background-image: linear-gradient(90deg, transparent 0 97%, rgb(23 22 32 / 7%) 97% 100%);
+  background-size: 1.15rem 100%;
+}
+
+.date-stamp {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date-stamp time {
+  display: contents;
+}
+
+.date-stamp__weekday,
+.date-stamp__month,
+.date-stamp__instruction {
+  font-size: clamp(0.64rem, 1.3vw, 0.8rem);
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.date-stamp__day {
+  white-space: nowrap;
+  margin: 0.1em 0 0;
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(5.2rem, 13vw, 9.5rem);
+  font-weight: 760;
+  line-height: 0.76;
+  letter-spacing: -0.1em;
+  transform: translateX(-0.08em);
+}
+
+.date-stamp__month {
+  margin-top: 0.8rem;
+}
+
+.date-stamp__rule {
+  width: 100%;
+  margin: 1.25rem 0 1rem;
+  border-top: 3px solid var(--ink);
+}
+
+.date-stamp__instruction {
+  max-width: 8rem;
+  color: #3a3490;
+  line-height: 1.35;
+}
+
+.quote {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.quote > p {
+  max-width: 14ch;
+  margin: 0;
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(2.15rem, 5.4vw, 4.8rem);
+  font-weight: 610;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.quote__credit {
+  display: grid;
+  justify-items: end;
+  margin-top: clamp(1.75rem, 4vw, 3.5rem);
+  padding-top: 0.85rem;
+  border-top: 2px solid var(--ink);
+  font-size: clamp(0.62rem, 1.3vw, 0.78rem);
+  line-height: 1.55;
+  text-align: right;
+}
+
+.quote__credit cite {
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.quote__credit span {
+  font-style: italic;
+}
+
+.calendar__footer {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: 0.8rem;
+  border-top: 2px dashed var(--ink);
+  font-size: clamp(0.56rem, 1vw, 0.7rem);
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.no-script {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  padding: 2rem;
+  color: var(--ink);
+  background: var(--paper);
+  text-align: center;
+}
+
+.no-script__label,
+.no-script__note {
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.no-script blockquote {
+  max-width: 22ch;
+  margin: 2rem auto;
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 650;
+  line-height: 1;
+}
+
+.no-script blockquote p {
+  margin: 0 0 1rem;
+}
+
+.no-script blockquote footer,
+.no-script__note {
+  font-family: "Azeret Mono Variable", monospace;
+  font-size: 0.75rem;
+}
+
+@keyframes settle-page {
+  from {
+    opacity: 0;
+    transform: translateY(-2.5rem) rotate(-4deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-1.15deg);
+  }
+}
+
+@media (max-width: 680px) {
+  .scene {
+    align-items: center;
+    padding: 1.5rem 1rem 2.25rem;
+  }
+
+  .scene::after,
+  .scene__scribble--right,
+  .scene__sun {
+    display: none;
+  }
+
+  .scene__scribble--left {
+    bottom: 1.1rem;
+    left: auto;
+    right: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 0.9;
+  }
+
+  .calendar {
+    width: min(100%, 31rem);
+    transform: rotate(-0.55deg);
+  }
+
+  .calendar__shadow {
+    inset: 0.7rem -0.55rem -0.7rem 0.55rem;
+  }
+
+  .calendar__topbar {
+    flex-wrap: wrap;
+    min-height: 4.6rem;
+    padding: 0.9rem 1rem 0.75rem;
+  }
+
+  .calendar__title {
+    min-width: 0;
+    flex-direction: column;
+    gap: 0;
+    font-size: clamp(2.15rem, 12vw, 3.35rem);
+    line-height: 0.67;
+  }
+
+  .calendar__edition {
+    writing-mode: vertical-rl;
+  }
+
+  .calendar__binding {
+    padding: 0 1.4rem;
+  }
+
+  .calendar__binding span {
+    width: 1.15rem;
+    border-width: 2px;
+  }
+
+  .calendar__sheet {
+    min-height: 30rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1.6rem;
+    padding: 2rem clamp(1.2rem, 6vw, 2rem) 1.25rem;
+    background-size: 0.85rem 100%;
+  }
+
+  .date-stamp {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+
+  .date-stamp time {
+    display: flex;
+    flex: 1 1 10rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    column-gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  .date-stamp__weekday {
+    width: 100%;
+  }
+
+  .date-stamp__day {
+    margin: 0;
+    font-size: clamp(4.3rem, 24vw, 6.4rem);
+  }
+
+  .date-stamp__month {
+    margin: 0 0 0.3rem;
+  }
+
+  .date-stamp__rule {
+    display: none;
+  }
+
+  .date-stamp__instruction {
+    align-self: stretch;
+    max-width: 5rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--ink);
+  }
+
+  .quote > p {
+    max-width: 17ch;
+    font-size: clamp(1.85rem, 9.4vw, 2.8rem);
+    line-height: 0.99;
+  }
+
+  .quote__credit {
+    margin-top: 1.5rem;
+  }
+
+  .calendar__footer span:last-child {
+    display: none;
+  }
+
+  @keyframes settle-page {
+    from {
+      opacity: 0;
+      transform: translateY(-1.5rem) rotate(-2deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) rotate(-0.55deg);
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .scene {
+    padding-inline: 0.75rem;
+  }
+
+  .calendar__topbar {
+    min-height: 4.25rem;
+  }
+
+  .calendar__sheet {
+    min-height: 29rem;
+    padding-inline: 1rem;
+  }
+
+  .quote > p {
+    font-size: clamp(1.7rem, 9vw, 2.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendar {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .scene,
+  .calendar__topbar,
+  .calendar__sheet,
+  .calendar__body {
+    background: Canvas;
+  }
+
+  .calendar__title span:last-child,
+  .scene__scribble {
+    color: CanvasText;
+    -webkit-text-stroke: 0;
+  }
+}
