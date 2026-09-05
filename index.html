@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ein Gespräch setzt voraus … — Hans-Georg Gadamer</title>
+  <meta name="description" content="„Ein Gespräch setzt voraus, dass der andere Recht haben könnte.“ — Hans-Georg Gadamer" />
+  <style>
+    :root {
+      --bg: #faf8f3;
+      --ink: #1a1a18;
+      --muted: #6b675f;
+      --accent: #9a6b2e;
+      --line: #e2ddd1;
+      --card: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121110;
+        --ink: #ece7dd;
+        --muted: #a09a8e;
+        --accent: #d9a75f;
+        --line: #2a2825;
+        --card: #1b1a19;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', 'Palatino Linotype', Palatino, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      padding: 2rem 1.25rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* dezente Papier-Textur */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(154,107,46,.10), transparent 60%),
+        radial-gradient(900px 500px at 50% 110%, rgba(154,107,46,.08), transparent 60%);
+    }
+    main {
+      position: relative;
+      width: min(42rem, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.75rem, 5vw, 4rem);
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.08);
+      animation: rise .9s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    .mark {
+      font-size: 4.5rem;
+      line-height: 1;
+      color: var(--accent);
+      display: block;
+      margin-bottom: .25rem;
+      font-family: Georgia, serif;
+    }
+    blockquote {
+      margin: 0;
+      font-size: clamp(1.65rem, 4.5vw, 2.6rem);
+      line-height: 1.35;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+    blockquote em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--accent);
+      margin: 2rem auto 1.5rem;
+      border-radius: 2px;
+      opacity: .85;
+    }
+    .author {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .meta {
+      margin-top: .5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      font-size: .875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      font-size: .75rem;
+      color: var(--muted);
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="mark" aria-hidden="true">&ldquo;</span>
+    <blockquote>
+      Ein Gespräch setzt voraus, dass der andere <em>Recht haben könnte.</em>
+    </blockquote>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="author">Hans-Georg Gadamer</div>
+    <div class="meta">1900 &ndash; 2002 &middot; Philosoph<br />Interview in DER SPIEGEL 8/2000</div>
+  </main>
+  <footer>Ein Satz zum Innehalten.</footer>
+</body>
+</html>
